@@ -17,6 +17,11 @@ try {
     app.get('/contact',(req, res)=>{
             res.sendFile(__dirname+ '/public/contact.html');
     })
+    app.post('/', (req, res)=>{
+        const formData = req.body
+        console.log(formData)
+        res.status(200)
+    })
 } catch (error) {
     console.error('unable to send file to client');
     console.error(error);
