@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const formObject = {};
       
       formData.forEach((value, key) => {
-        console.log(value)
+        // console.log(value)
         formObject[key] = value; // Add each form field and value to the object
       });
   
