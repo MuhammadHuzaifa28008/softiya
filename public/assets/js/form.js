@@ -87,6 +87,9 @@ document.addEventListener("DOMContentLoaded", function() {
         loading.style.display = 'none';
         if (response.status == 200) {
           sentMessage.style.display = 'block';
+          setTimeout(() => {
+            sentMessage.style.display = 'none';
+          }, 5000);
           form.reset(); // Clear the form after successful submission
         } else {
           throw new Error('Network response was not ok');
