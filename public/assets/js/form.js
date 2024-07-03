@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
       errorMessage.style.display = 'none';
       sentMessage.style.display = 'none';
   
-      fetch('http://localhost:8080', {
+      fetch('https://localhost:8080', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
