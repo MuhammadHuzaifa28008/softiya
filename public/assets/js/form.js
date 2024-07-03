@@ -1,51 +1,7 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     const form = document.getElementById('contactFrom');
-  
-//     form.addEventListener('submit', function(event) {
-//       event.preventDefault(); // Prevent the default form submission
-  
-//       const formData = new FormData(form);
-//       for (const [name, value] of formData) {
-//         console.log(`${name}: ${value}`); // Log each form field and value
-//       }
-  
-//       const loading = document.querySelector('.loading');
-//       const errorMessage = document.querySelector('.error-message');
-//       const sentMessage = document.querySelector('.sent-message');
-  
-//       // Show loading indicator
-//       loading.style.display = 'block';
-//       errorMessage.style.display = 'none';
-//       sentMessage.style.display = 'none';
-  
-//       fetch('http://localhost:8080', {
-//         method: 'POST',
-//         body: formData
-//       })
-//       .then(response => {
-//         loading.style.display = 'none';
-//         if (response.ok) {
-//           sentMessage.style.display = 'block';
-//           form.reset(); // Clear the form after successful submission
-//         } else {
-//           throw new Error('Network response was not ok');
-//         }
-//       })
-//       .catch(error => {
-//         loading.style.display = 'none';
-//         errorMessage.textContent = 'An error occurred. Please try again later.';
-//         errorMessage.style.display = 'block';
-  
-//         // Hide error message after 5 seconds
-//         setTimeout(() => {
-//           errorMessage.style.display = 'none';
-//         }, 5000);
-//       });
-//     });
-//   });
-  
+const dotenv = require('dotenv')
 
 
+dotenv.config()
 
 
 
@@ -73,8 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
       loading.style.display = 'block';
       errorMessage.style.display = 'none';
       sentMessage.style.display = 'none';
-  
-      fetch('https://localhost:8080', {
+
+      let url = process.env.serverURL
+
+fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
