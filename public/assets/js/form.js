@@ -1,7 +1,4 @@
-const dotenv = require('dotenv')
 
-
-dotenv.config()
 
 
 
@@ -30,7 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
       errorMessage.style.display = 'none';
       sentMessage.style.display = 'none';
 
-      let url = process.env.serverURL
+      // let url = "http://localhost:8080"  for local
+      let url = "https://softagents.adaptable.app"
 
 fetch(url, {
         method: 'POST',
